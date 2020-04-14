@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Modern Image Slider</string>
+    <string name="explore">Explore</string>
+    <string name="search">Search</string>
+    <string name="favourite">Favourite</string>
+    <string name="hello_sam">Hello, Rolinda</string>
+    <string name="where_are_we">Where are we</string>
+    <string name="going">Going</string>
+</resources>

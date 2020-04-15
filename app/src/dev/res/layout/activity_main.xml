@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/cardProfilePicture"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/profile_pic_new"
+        app:civ_border_color="#FF000000"
+        app:civ_border_width="1dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textHello"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:text="@string/hello_sam"
+        android:textColor="#212121"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@id/cardProfilePicture"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardProfilePicture"
+        app:layout_constraintTop_toTopOf="@id/cardProfilePicture" />
+
+    <TextView
+        android:id="@+id/whereAreWe"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/where_are_we"
+        android:textColor="#212121"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/textHello"
+        app:layout_constraintTop_toBottomOf="@id/cardProfilePicture" />
+
+    <TextView
+        android:id="@+id/textGoing"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:text="@string/going"
+        android:textColor="#757575"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/whereAreWe"
+        app:layout_constraintTop_toBottomOf="@+id/whereAreWe" />
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/locationViewPager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="30dp"
+        android:paddingStart="50dp"
+        android:paddingEnd="50dp"
+        app:layout_constraintBottom_toTopOf="@id/navigationView"
+        app:layout_constraintTop_toBottomOf="@id/textGoing" />
+
+    <me.ibrahimsn.lib.SmoothBottomBar
+        android:id="@+id/navigationView"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        app:iconSize="20dp"
+        app:iconTint="#757575"
+        app:iconTintActive="#212121"
+        app:indicatorColor="#ECECEC"
+        app:indicatorRadius="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/navigation_menu"
+        app:textColor="#212121"
+        app:textSize="15sp" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

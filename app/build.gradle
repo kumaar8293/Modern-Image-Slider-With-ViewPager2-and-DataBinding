@@ -23,11 +23,35 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
+        debug {
+            applicationIdSuffix ".debug"
+            debuggable true
+        }
     }
     dataBinding {
         enabled = true  //apply plugin: 'kotlin-kapt' Required
-
     }
+    flavorDimensions "default"
+    productFlavors {
+        dev {
+         //   minSdkVersion 21
+         //   versionNameSuffix "-dev"
+        //    applicationIdSuffix '.dev'
+           // applicationId 'com.mukesh.modernimageslider.free'
+            // The following configuration limits the "dev" flavor to using
+            // English stringresources and xxhdpi screen-density resources.
+            //resConfigs "en", "xxhdpi"
+
+            buildConfigField("String","FLAVOR_TYPE","\"dev\"")
+        }
+        prod {
+           // applicationIdSuffix ".prod"
+            //applicationId 'com.mukesh.modernimageslider.paid'
+            buildConfigField("String","FLAVOR_TYPE","\"prod\"")
+
+        }
+    }
+
 }
 
 dependencies {

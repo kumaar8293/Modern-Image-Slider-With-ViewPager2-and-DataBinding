@@ -10,19 +10,24 @@ import androidx.viewpager2.widget.ViewPager2
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
+    companion object {
 
-    private var baseURL = "https://www.infinityandroid.com/images/"
+        var baseURL = "https://www.infinityandroid.com/images/"
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-
-        if (BuildConfig.FLAVOR_TYPE == "dev") {
-            setDataToAdapter(prepareDevData())
-        } else {
-            setDataToAdapter(prepareProdData())
-        }
+        setDataToAdapter(
+            LocationRepository.prepareData()
+            /*
+             if (BuildConfig.FLAVOR_TYPE == "dev") {
+                 prepareDevData()
+             } else {
+                 prepareProdData()
+             }*/
+        )
 
     }
 
